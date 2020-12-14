@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using CRUD.Commands;
 using CRUD.Model;
+using Microsoft.Win32;
 
 namespace CRUD.ViewModel
 {
@@ -85,7 +86,8 @@ namespace CRUD.ViewModel
         //public ObservableCollection<User> Countries { get; set; }
         public UserViewModel()
         {
-            User = new User() { Language = "English" };
+            User = new User() { Language = "English" , Hobby = "Cricket" };
+          
             //User = new User() { Language = "Hindi", Country = "USA", ID=2 };
             //User = new User() { Language = "Hindi" };
             Users = new ObservableCollection<User>();
@@ -125,7 +127,33 @@ namespace CRUD.ViewModel
        
         private void SubmitExecute(object parameter)
         {
+            //var values = (object[])parameter;
+            //User name = (User)values[0];
+            //bool check = (bool)values[1];
+            //if (check)
+            //{
+            //    Users.Add(name);
+            //}
+            //else
+            //{
+            //    Users.Remove(name);
+            //}
+
+            //User.Hobby = "";
+            //foreach (User item in Users)
+            //{
+            //    User.Hobby = User.Hobby + item;
+            //}
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.DefaultExt = (".png");
+            open.Filter = "Pictures (*.jpg;*.gif;*.png)|*.jpg;*.gif;*.png";
+            if (open.ShowDialog() == true)
+                User.ImagePath = open.FileName;
+
             Users.Add(User);
+
+
         }
 
         private bool CanSubmitExecute(object parameter)

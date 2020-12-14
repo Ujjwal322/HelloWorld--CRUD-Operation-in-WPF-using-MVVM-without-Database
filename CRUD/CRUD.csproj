@@ -53,6 +53,9 @@
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="Prism, Version=8.0.0.1909, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.8.0.0.1909\lib\net47\Prism.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -88,7 +91,84 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\Bracket.cs" />
+    <Compile Include="Converter\BracketEnums.cs" />
+    <Compile Include="Converter\EnumConverter.cs" />
+    <Compile Include="Helper\ViewModelBase.cs" />
+    <Compile Include="Model\BracketEnum.cs" />
+    <Compile Include="Model\EnumDescriptionTypeConverter.cs" />
+    <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Service\IPerson.cs" />
+    <Compile Include="Service\PersonDataAccess.cs" />
+    <Compile Include="Themes\MyCustomControl.cs" />
+    <Compile Include="ViewModel\BracketViewModel.cs" />
+    <Compile Include="ViewModel\CountryViewModel.cs" />
+    <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="View\BracketTab.xaml.cs">
+      <DependentUpon>BracketTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example2.xaml.cs">
+      <DependentUpon>Example2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example3.xaml.cs">
+      <DependentUpon>Example3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example4.xaml.cs">
+      <DependentUpon>Example4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example5.xaml.cs">
+      <DependentUpon>Example5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example6.xaml.cs">
+      <DependentUpon>Example6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example7.xaml.cs">
+      <DependentUpon>Example7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Example8.xaml.cs">
+      <DependentUpon>Example8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow1.xaml.cs">
+      <DependentUpon>MainWindow1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MyCustomControl.cs" />
+    <Compile Include="View\Panel1.xaml.cs">
+      <DependentUpon>Panel1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel2.xaml.cs">
+      <DependentUpon>Panel2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel3.xaml.cs">
+      <DependentUpon>Panel3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel4.xaml.cs">
+      <DependentUpon>Panel4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel5.xaml.cs">
+      <DependentUpon>Panel5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Panel6.xaml.cs">
+      <DependentUpon>Panel6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resources.xaml.cs">
+      <DependentUpon>Resources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
     <Page Include="Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BracketTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +186,9 @@
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Converter\CountryList.cs" />
+    <Compile Include="Converter\MyConverter.cs" />
+    <Compile Include="Converter\PasswordHelper.cs" />
+    <Compile Include="Converter\VisibilityConverter .cs" />
     <Compile Include="Example.xaml.cs">
       <DependentUpon>Example.xaml</DependentUpon>
     </Compile>
@@ -116,6 +199,78 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Example2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Example3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Example4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Example5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Example6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Example7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Example8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Genric.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Panel1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Panel2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Panel3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Panel4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Panel5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Panel6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DatabaseLayer.cs" />
@@ -150,6 +305,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ngDialog-theme-default.css" />
+    <Content Include="Content\ngDialog.css" />
+    <Content Include="Content\ngDialog.min.css" />
+    <Content Include="Scripts\ngDialog.js" />
+    <Content Include="Scripts\ngDialog.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

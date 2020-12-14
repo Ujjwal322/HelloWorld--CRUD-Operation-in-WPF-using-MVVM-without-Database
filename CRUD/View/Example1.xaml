@@ -6,17 +6,28 @@
         xmlns:local="clr-namespace:CRUD"
         xmlns:vm="clr-namespace:CRUD.ViewModel"
         xmlns:con="clr-namespace:CRUD.Converter"
+        xmlns:converter="clr-namespace:CRUD.Converter"
+        xmlns:hl="clr-namespace:CRUD.Converter"
+        xmlns:w="clr-namespace:CRUD.Converter"
         mc:Ignorable="d"
-       Title="Example1" Height="583" Width="1079">
+       Title="Example1" Height="606" Width="1079">
     <Window.Resources>
         <vm:UserViewModel x:Key="UserViewModel"/>
         <con:CountryList x:Key="CountryList"/>
+        <converter:VisibilityConverter x:Key="localVisibilityConverte"/>
+        <hl:MyConverter x:Key="MyConverter"/>
+        <w:PasswordHelper x:Key="PasswordHelper"/>
+        <!--<con:PasswordHelper x:Key="PasswordHelper"/>-->
     </Window.Resources>
     <Grid DataContext="{Binding Source={StaticResource UserViewModel}}">
-        <Grid Background="Bisque" Margin="10,37,21,13">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="545*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Bisque" Margin="21,29,10,10">
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" Name="textBlockHeading" Text="Registration:" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"/>
             <!--Button as a Link button using style-->
-            <Button Margin="451,5,12,288" Content="Login" Cursor="Hand" >
+            <Button Margin="451,5,111,501" Content="Login" Cursor="Hand" Click="Login_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <TextBlock TextDecorations="Underline">  
@@ -45,24 +56,24 @@
                 <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,20,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
                 <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,50,0,0" Name="textBlockLastName" Text="Last Name:" VerticalAlignment="Top" Width="110" />
                 <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,80,0,0" Name="textBlockEmailId" Text="EmailId:" VerticalAlignment="Top" Width="110" />
-                <!--<TextBlock Height="23" HorizontalAlignment="Left" Margin="67,107,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />-->
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,277,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
                 <!--<TextBlock Height="23" HorizontalAlignment="Left" Margin="67,136,0,0" Name="textBlockConfirmPwd" Text="ConfirmPassword:" VerticalAlignment="Top" Width="110" Grid.RowSpan="2" />-->
                 <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,108,0,0" Name="textBlockAddress" Text="Address" VerticalAlignment="Top" Width="110" />
                 <TextBox Height="23" HorizontalAlignment="Left" Margin="183,20,0,0"  VerticalAlignment="Top" Width="222" Text="{Binding User.FirstName, Mode=TwoWay}"/>
                 <TextBox Height="23" HorizontalAlignment="Left" Margin="183,50,0,0"  VerticalAlignment="Top" Width="222"  Text="{Binding User.LastName, Mode=TwoWay}"/>
                 <TextBox Height="23" HorizontalAlignment="Left" Margin="183,80,0,0"  VerticalAlignment="Top" Width="222"  Text="{Binding User.EmailID, Mode=TwoWay}" />
-                <!--<PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,107,0,0"  VerticalAlignment="Top" Width="222" Name="passwordBox1" PasswordBox.PasswordChanged="{Binding ElementName=UserGrid,Path=SelectedItem.Password}"/>-->
+                <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,267,0,0"  VerticalAlignment="Top" Width="222" Name="passwordBox1" w:PasswordHelper.Attach="True" w:PasswordHelper.Password="{Binding User.Password,Mode=TwoWay}"/>
                 <!--For password-->
                 <!--<PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,136,0,0"  VerticalAlignment="Top" Width="222" Name="passwordBoxConfirm" PasswordBox.PasswordChanged="{Binding ElementName=UserGrid,Path=SelectedItem.ConfirmPassword}"/>-->
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="183,0,0,312"  VerticalAlignment="Bottom" Width="222"  Text="{Binding User.Address, Mode=TwoWay}"/>
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="182,0,0,305"  VerticalAlignment="Bottom" Width="222"  Text="{Binding User.Address, Mode=TwoWay}"/>
                 <!--<RadioButton Height="23" HorizontalAlignment="Left" Margin="190,139,0,281" Name="radMale" GroupName="Gender" Content="Male" IsChecked="{Binding Male, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.643,-1.13"  Width="45"></RadioButton>-->
                 <!--<RadioButton Height="23" HorizontalAlignment="Left" Name="radFemale" GroupName="Gender" Content="Female" IsChecked="{Binding Female,  Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="280,139,0,281"  Width="70"></RadioButton>-->
-                <RadioButton Content="{Binding User.Gender}" IsChecked="{Binding User.Male}"  GroupName="grp" Margin="183,139,-183,-139"></RadioButton>
-                <RadioButton Content="{Binding User.Gender1}" IsChecked="{Binding User.Female}"  GroupName="grp" Margin="265,139,-265,-139"></RadioButton>
+                <RadioButton Name="rbnMale" Content="{Binding User.Gender}" IsChecked="{Binding User.Male}"  GroupName="grp" Margin="183,143,756,287" ></RadioButton>
+                <RadioButton Name="rbnFemale" Content="{Binding User.Gender1}" IsChecked="{Binding User.Female}"  GroupName="grp" Margin="269,143,667,0"  VerticalAlignment="Top" Height="18"  ></RadioButton>
 
                 <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="168,305,0,0" Name="btnSubmit" VerticalAlignment="Top" Width="70" Command="{Binding SubmitCommand}"/>
-                <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="265,305,0,0" Name="button2" VerticalAlignment="Top" Width="70"  RenderTransformOrigin="0.557,1.304" />
-                <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,305,556,0" Name="button3" VerticalAlignment="Top" Width="70"  RenderTransformOrigin="-1.143,0.739" />
+                <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="265,305,0,0" Name="button2" VerticalAlignment="Top" Width="70"  RenderTransformOrigin="0.557,1.304" Click="button2_Click" />
+                <Button Content="Upload" Height="23" HorizontalAlignment="Right" Margin="0,305,556,0" Name="button3" VerticalAlignment="Top" Width="70"  RenderTransformOrigin="-1.143,0.739"  />
                 <TextBlock HorizontalAlignment="Left" Margin="67,136,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top"/>
                 <CheckBox Content="English" IsChecked="{Binding Path=User.IsSelected,UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="183,172,0,0" VerticalAlignment="Top" />
                 <CheckBox Content="Hindi" IsChecked="{Binding Path=User.IsSelected,UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="269,175,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,0.375" />
@@ -74,6 +85,43 @@
                 <ComboBox  Height="20px" x:Name="SelectCountry"  ItemsSource="{StaticResource CountryList}" SelectedItem="{Binding User.Country}" Margin="183,203,601,220"/>
                 <TextBlock HorizontalAlignment="Left" Margin="67,238,0,0" TextWrapping="Wrap" Text="DOB:" VerticalAlignment="Top"/>
                 <DatePicker HorizontalAlignment="Left" Margin="183,238,0,0" SelectedDate="{Binding User.DOB}" VerticalAlignment="Top" Width="222"/>
+                <TextBlock HorizontalAlignment="Left" Margin="500,20,0,0" TextWrapping="Wrap" Name="textBlockWeight" Visibility="{Binding IsChecked,ElementName=rbnMale,Converter={StaticResource localVisibilityConverte}}" Text="Weight" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="502,50,0,0" TextWrapping="Wrap" Name="textBlockHeight" Visibility="{Binding IsChecked,ElementName=rbnMale,Converter={StaticResource localVisibilityConverte}}" Text="Height" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="589,50,0,0" TextWrapping="Wrap"  Name="txtHeight" Text="{Binding User.Height, Mode=TwoWay}" Visibility="{Binding IsChecked,ElementName=rbnMale,Converter={StaticResource localVisibilityConverte}}" VerticalAlignment="Top" Width="240"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="589,20,0,0" TextWrapping="Wrap"  Name="txtWeight" Text="{Binding User.Weight, Mode=TwoWay }"  Visibility="{Binding IsChecked,ElementName=rbnMale,Converter={StaticResource localVisibilityConverte}}" VerticalAlignment="Top" Width="240"/>
+                <TextBlock HorizontalAlignment="Left" Margin="505,20,0,0" TextWrapping="Wrap" Text="Hobby" Visibility="{Binding IsChecked,ElementName=rbnFemale,Converter={StaticResource localVisibilityConverte}}" VerticalAlignment="Top"/>
+                <CheckBox Name="cbxCricket"  Content="Cricket" IsChecked="{Binding User.IsSelected,UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Visibility="{Binding IsChecked,ElementName=rbnFemale,Converter={StaticResource localVisibilityConverte}}" HorizontalAlignment="Left" Margin="589,20,0,0"  VerticalAlignment="Top"/>
+                <CheckBox Content="Reading" Visibility="{Binding IsChecked,ElementName=rbnFemale,Converter={StaticResource localVisibilityConverte}}" HorizontalAlignment="Left" Margin="669,20,0,0" VerticalAlignment="Top"/>
+                <CheckBox Content="Traveling" Visibility="{Binding IsChecked,ElementName=rbnFemale,Converter={StaticResource localVisibilityConverte}}" HorizontalAlignment="Left" Margin="764,20,0,0" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="507,90,0,0" TextWrapping="Wrap" Text="Image" VerticalAlignment="Top"/>
+                <!--<TextBox HorizontalAlignment="Left" Height="23" Name="txtimage" Margin="589,87,0,0" TextWrapping="Wrap" Text="{Binding User.ImagePath, Mode=TwoWay}" VerticalAlignment="Top" Width="240"/>-->
+                <Image Source="{Binding User.ImagePath}" Stretch="Fill"  Width="60" Name="img1" Height="60" Margin="849,50,97,333" />
+                <!--<StackPanel>
+                    <CheckBox Content="Show comment" Name="CommentCheckBox" Height="93" HorizontalAlignment="Left" Margin="850,86,0,0" VerticalAlignment="Top"/>
+
+                    <TextBox Text="{Binding Comment, UpdateSourceTrigger=PropertyChanged}" Name="CommentTextBox">
+                        <TextBox.Style>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=CommentCheckBox}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                </StackPanel>-->
+
+                <!--<CheckBox Width="120" Name="cbIndia" Content="India" Command="{Binding SubmitCommand}" Margin="589,83,297,-83">
+                    <CheckBox.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MyConverter}">
+                            <Binding ElementName="cbIndia" Path="Content" />
+                            <Binding ElementName="cbIndia" Path="IsChecked"/>
+                        </MultiBinding>
+                    </CheckBox.CommandParameter>
+                </CheckBox>-->
+
                 <!--<TextBlock HorizontalAlignment="Left" Margin="67,273,0,0" TextWrapping="Wrap" Text="Photo:" VerticalAlignment="Top"/>-->
                 <!--<Image HorizontalAlignment="Left"  Margin="183,270,0,0" Source="{Binding Path=User.Image}" VerticalAlignment="Top" Width="60" Height="60"/>-->
 
@@ -85,9 +133,9 @@
                 <ComboBoxItem  Content="UK"></ComboBoxItem>
             </ComboBox>-->
 
-                <ListView Width="Auto" Margin="90,333,121,10" ItemsSource="{Binding Users}" >
+                <ListView Width="Auto" Margin="89,343,122,0" ItemsSource="{Binding Users}"  >
                     <ListView.View>
-                        <GridView>
+                        <GridView  >
                             <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding FirstName}" Width="Auto"></GridViewColumn>
                             <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}" Width="Auto"></GridViewColumn>
                             <GridViewColumn Header="Email" DisplayMemberBinding="{Binding EmailID}" Width="Auto"></GridViewColumn>
@@ -99,6 +147,11 @@
                             <GridViewColumn Header="Country" DisplayMemberBinding="{Binding Country}" Width="Auto"></GridViewColumn>
                             <GridViewColumn Header="DOB" DisplayMemberBinding="{Binding DOB}" Width="Auto"></GridViewColumn>
                             <!--<GridViewColumn Header="Image" DisplayMemberBinding="{Binding Path=User.Image}" Width="Auto"></GridViewColumn>-->
+                            <GridViewColumn Header="Weight" DisplayMemberBinding="{Binding Weight}"   Width="Auto"></GridViewColumn>
+                            <GridViewColumn Header="Height" DisplayMemberBinding="{Binding Height}" Width="Auto"></GridViewColumn>
+                            <GridViewColumn Header="Hobby" DisplayMemberBinding="{Binding Hobby}"  Width="Auto"></GridViewColumn>
+                            <GridViewColumn Header="Password" DisplayMemberBinding="{Binding Password}" Width="Auto"></GridViewColumn>
+                            <GridViewColumn Header="Image" DisplayMemberBinding="{Binding Image}" Width="Auto"></GridViewColumn>
 
                         </GridView>
                     </ListView.View>
@@ -106,5 +159,7 @@
 
             </Grid>
         </Grid>
+
+
     </Grid>
 </Window>

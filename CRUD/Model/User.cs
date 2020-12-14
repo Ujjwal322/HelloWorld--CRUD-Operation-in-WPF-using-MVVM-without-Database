@@ -121,6 +121,29 @@ namespace CRUD.Model
             }
         }
 
+        private string _height;
+        public string Height
+        {
+            get { return _height; }
+            set
+            {
+                _height = value;
+                OnPropertyChanged(Height);
+            }
+        }
+
+
+        private string _weight;
+        public string Weight
+        {
+            get { return _weight; }
+            set
+            {
+                _weight = value;
+                OnPropertyChanged(Weight);
+            }
+        }
+
         private string _country;
 
         public string Country
@@ -132,7 +155,17 @@ namespace CRUD.Model
                 OnPropertyChanged(Country);
             }
         }
+        private string _hobby;
 
+        public string Hobby
+        {
+            get { return _hobby; }
+            set
+            {
+                _hobby = value;
+                OnPropertyChanged(Hobby);
+            }
+        }
 
         public string Language
         {
@@ -221,6 +254,17 @@ namespace CRUD.Model
         
         }
 
+        private string _ImagePath;
+        public string ImagePath {
+
+            get { return _ImagePath; }
+        
+            set
+            {
+                _ImagePath = value;
+                OnPropertyChanged("ImagePath");
+            }
+        }
 
         public bool Male 
         {
