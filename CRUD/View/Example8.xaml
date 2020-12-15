@@ -52,7 +52,7 @@
             <CheckBox Margin="-1360,69,0,408" Width="20"/>
             <TextBox TextWrapping="Wrap"  Margin="-1185,69,-30,408" Width="176"  />
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="3" Orientation = "Horizontal" Margin="0,100,0,592" Grid.RowSpan="3" x:Name="BuiltUp" Visibility="{Binding TextBoxVisibility1,Mode=TwoWay}">
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="3" Orientation = "Horizontal" Margin="0,100,0,592" Grid.RowSpan="3" x:Name="BuiltUp" Visibility="{Binding TextBoxVisibility1,Mode=TwoWay}" VerticalAlignment="Center">
 
             <!--<ComboBox Width="155" Name="BracketItem" SelectedIndex="0" Margin="0,30,0,385">
                 <ComboBoxItem Content="Program Determines"></ComboBoxItem>
@@ -63,19 +63,19 @@
             <TextBlock HorizontalAlignment="Left" Margin="6,29,0,0" Name="tblbutop" TextWrapping="Wrap" Text="BU Top Flange" VerticalAlignment="Top" Height="25"/>
             <TextBlock HorizontalAlignment="Left" Margin="55,10,0,0"  x:Name="tblbuweb" TextWrapping="Wrap" Text="Thickness" VerticalAlignment="Top" Height="19"/>
             <TextBlock HorizontalAlignment="Left" Margin="85,10,0,0"  Name="tblbflag" TextWrapping="Wrap" Text="Width" VerticalAlignment="Top" Height="19"/>
-            <CheckBox Margin="-370,34,0,422" Name="cbx1" Width="16"/>
+            <CheckBox Margin="-370,34,0,422" Name="cbx1" Width="16" VerticalAlignment="Top"/>
             <!--<TextBox TextWrapping="Wrap"  Width="70" Name="text1"  Margin="-1260,100,0,325"/>-->
-            <TextBox TextWrapping="Wrap"  Width="70" Name="text1"  Margin="-260,34,0,422"></TextBox>
-            <CheckBox  Margin="-110,34,0,422" Name="cbx4" Width="18"/>
-            <TextBox TextWrapping="Wrap" Width="70" Name="text4" Margin="-40,34,0,422"/>
+            <TextBox TextWrapping="Wrap"  Width="70" Name="text1"  Margin="-260,34,0,422" VerticalAlignment="Top"></TextBox>
+            <CheckBox  Margin="-110,34,0,422" Name="cbx4" Width="18" VerticalAlignment="Top"/>
+            <TextBox TextWrapping="Wrap" Width="70" Name="text4" Margin="-40,34,0,422" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="-330,59,0,0" TextWrapping="Wrap" Text="BU Web" VerticalAlignment="Top" Height="25"/>
-            <CheckBox Margin="-222,61,677,394" Name="cbx2" Width="17" />
-            <TextBox TextWrapping="Wrap" Name="text2" Margin="-671,61,589,394" Width="73"/>
-            <TextBlock HorizontalAlignment="Left" Margin="-800,89,0,0" TextWrapping="Wrap" Text="BU Bottom Flange" VerticalAlignment="Top" Height="25"/>
-            <CheckBox Margin="-695,89,677,364" Name="cbx3" Width="18"/>
-            <TextBox TextWrapping="Wrap" Name="text3" Margin="-675,89,587,364" Width="70"/>
-            <CheckBox Margin="-565,89,572,364" Name="cbx5" Width="18"/>
-            <TextBox TextWrapping="Wrap" Width="70" Name="text5" Margin="-565,89,497,364"/>
+            <CheckBox Margin="-222,61,677,394" Name="cbx2" Width="17" VerticalAlignment="Top" />
+            <TextBox TextWrapping="Wrap" Name="text2" Margin="-671,61,589,394" Width="73" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="-800,89,0,0" TextWrapping="Wrap" Text="BU Bottom Flange" VerticalAlignment="Top" Height="25" />
+            <CheckBox Margin="-695,89,677,364" Name="cbx3" Width="18" VerticalAlignment="Top"/>
+            <TextBox TextWrapping="Wrap" Name="text3" Margin="-675,89,587,364" Width="70" VerticalAlignment="Top"/>
+            <CheckBox Margin="-565,89,572,364" Name="cbx5" Width="18" VerticalAlignment="Top"/>
+            <TextBox TextWrapping="Wrap" Width="70" Name="text5" Margin="-565,89,497,364" VerticalAlignment="Top"/>
         </StackPanel>
         <Separator Grid.Row="2" Grid.ColumnSpan="3"></Separator>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Grid.ColumnSpan="3" Orientation = "Horizontal" x:Name="Stiffner" Margin="0,0,1,0">

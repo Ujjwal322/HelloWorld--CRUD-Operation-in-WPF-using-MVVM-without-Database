@@ -70,10 +70,10 @@ namespace CRUD.ViewModel
             set
             {
                 _bracket = value;
+                OnPropertyChanged();
+                TextBoxVisibility = (BracketDetail == BracketOptionEnum.HotRolled) ? Visibility.Visible : Visibility.Hidden;
+                TextBoxVisibility1 = (BracketDetail == BracketOptionEnum.BuiltUpBeam) ? Visibility.Visible : Visibility.Hidden;
                
-                TextBoxVisibility = (BracketDetail == BracketOptionEnum.HotRolled) ? Visibility.Visible : Visibility.Collapsed;
-                TextBoxVisibility1 = (BracketDetail == BracketOptionEnum.BuiltUpBeam) ? Visibility.Visible : Visibility.Collapsed;
-                 OnPropertyChanged();
                 //if (value =="Program Det.")
                 //    TextBoxVisibility = Visibility.Hidden;
                 //else
