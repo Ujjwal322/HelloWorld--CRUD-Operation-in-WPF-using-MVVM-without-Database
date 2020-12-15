@@ -27,7 +27,8 @@ namespace CRUD.Converter
         {
             if (value is string s)
             {
-                return Enum.Parse(typeof(BracketOptionEnum), s.Substring(0, s.IndexOf(':')));
+                //return Enum.Parse(typeof(BracketOptionEnum), s.Substring(0, s.IndexOf(':')));
+                return Enum.Parse(typeof(BracketOptionEnum), s.Substring(0));
             }
             return null;
         }
@@ -36,7 +37,8 @@ namespace CRUD.Converter
 
         public static string GetString(BracketOptionEnum format)
         {
-            return format.ToString() + ": " + GetDescription(format);
+            //return format.ToString() + ": " + GetDescription(format);
+            return format.ToString();
         }
 
         public static string GetDescription(BracketOptionEnum format)

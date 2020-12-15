@@ -45,12 +45,12 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="0,10,5,10" Grid.RowSpan="2">
             <Label Content = "Bracket Option"  VerticalAlignment = "Top" Width = "100" Margin="0,36,0,0" Height="39" IsEnabled="True"/>
             <CheckBox  Margin="0,45,0,453" Width="20"/>
-            <ComboBox Width="180" Name="BracketItem"   ItemsSource="{Binding Source={StaticResource EnumCon},Path=Strings}" SelectedItem="{Binding BracketDetail,Converter={StaticResource EnumCon}}" VerticalAlignment="Top" SelectedIndex="1" Margin="0,36,0,0" Height="39" />
+            <ComboBox Width="180" Name="BracketItem"   ItemsSource="{Binding Source={StaticResource EnumCon},Path=Strings}" SelectedItem="{Binding BracketDetail,Converter={StaticResource EnumCon}}" VerticalAlignment="Top" SelectedIndex="1" Margin="0,36,0,0" Height="29" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,1,0" x:Name="HotRolled" Visibility="{Binding TextBoxVisibility,Mode=TwoWay}">
-            <TextBlock TextWrapping="Wrap" Text="HR Bracket" Margin="7,69,0,408" Width="785"/>
-            <CheckBox Margin="-1360,69,0,408" Width="20"/>
-            <TextBox TextWrapping="Wrap"  Margin="-1185,69,-30,408" Width="176"  />
+            <TextBlock TextWrapping="Wrap" Text="HR Bracket" Margin="7,69,0,870" Width="785"/>
+            <CheckBox Margin="-1360,69,0,612" Width="20"/>
+            <TextBox TextWrapping="Wrap"  Margin="-1185,69,-30,1074" Width="176"  />
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="3" Orientation = "Horizontal" Margin="0,100,0,592" Grid.RowSpan="3" x:Name="BuiltUp" Visibility="{Binding TextBoxVisibility1,Mode=TwoWay}" VerticalAlignment="Center">
 
@@ -77,28 +77,28 @@
             <CheckBox Margin="-565,89,572,364" Name="cbx5" Width="18" VerticalAlignment="Top"/>
             <TextBox TextWrapping="Wrap" Width="70" Name="text5" Margin="-565,89,497,364" VerticalAlignment="Top"/>
         </StackPanel>
-        <Separator Grid.Row="2" Grid.ColumnSpan="3"></Separator>
-        <StackPanel Grid.Column = "0" Grid.Row = "3" Grid.ColumnSpan="3" Orientation = "Horizontal" x:Name="Stiffner" Margin="0,0,1,0">
+        <Separator Grid.Row="2" Grid.ColumnSpan="3" Margin="0,-1870,0,0"></Separator>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="3" Orientation = "Horizontal" VerticalAlignment="Top" x:Name="Stiffner" Margin="0,233,1,0" Height="905" Grid.RowSpan="3">
 
 
-            <TextBlock TextWrapping="Wrap" Text="Top Flange Stiffener" Margin="5,40,0,603" Width="110"/>
-            <TextBlock TextWrapping="Wrap" Text="Bottom Flange Stiffener" Margin="-107,70,0,570" Width="126"/>
-            <TextBlock TextWrapping="Wrap" Text="Stiffener Champners" Margin="-130,100,0,540" Width="121"/>
+            <TextBlock TextWrapping="Wrap" Text="Top Flange Stiffener" Margin="5,40,0,845" Width="110"/>
+            <TextBlock TextWrapping="Wrap" Text="Bottom Flange Stiffener" Margin="-107,70,0,810" Width="126"/>
+            <TextBlock TextWrapping="Wrap" Text="Stiffener Champners" Margin="-130,100,0,785" Width="122"/>
 
 
-            <TextBlock TextWrapping="Wrap" Text="Thickness" Margin="80,10,0,629" Width="60"/>
-            <TextBlock TextWrapping="Wrap" Text="Width" Margin="60,10,0,629" Width="60"/>
+            <TextBlock TextWrapping="Wrap" Text="Thickness" Margin="80,10,0,880" Width="60"/>
+            <TextBlock TextWrapping="Wrap" Text="Width" Margin="60,10,0,880" Width="60"/>
             <CheckBox  Margin="-460,40,0,145" Width="12"/>
             <CheckBox  Margin="-460,70,0,125" Width="15"/>
             <CheckBox  Margin="-460,100,0,90" Width="15"/>
-            <TextBox TextWrapping="Wrap"  Width="80" Margin="-300,40,20,599" />
-            <TextBox TextWrapping="Wrap" Width="80" Margin="-300,70,20,568"/>
-            <TextBox TextWrapping="Wrap"  Width="80" Margin="-300,100,20,540"/>
-            <CheckBox  Margin="-140,40,0,585" Width="58"/>
-            <CheckBox  Margin="-140,70,0,568" Width="54"/>
-            <TextBox TextWrapping="Wrap"  Width="80" Margin="-70,40,20,599"/>
-            <TextBox TextWrapping="Wrap"  Width="80" Margin="-100,70,20,572"/>
-            <TextBlock TextWrapping="Wrap" Text="Length Option" Margin="0,40,0,595"/>
+            <TextBox TextWrapping="Wrap"  Width="80" Margin="-300,40,20,840" />
+            <TextBox TextWrapping="Wrap" Width="80" Margin="-300,70,20,810"/>
+            <TextBox TextWrapping="Wrap"  Width="80" Margin="-300,100,20,785"/>
+            <CheckBox  Margin="-140,40,0,835" Width="55"/>
+            <CheckBox  Margin="-140,70,0,805" Width="54"/>
+            <TextBox TextWrapping="Wrap"  Width="80" Margin="-70,40,20,840"/>
+            <TextBox TextWrapping="Wrap"  Width="80" Margin="-100,70,20,810"/>
+            <TextBlock TextWrapping="Wrap" Text="Length Option" Margin="0,40,0,845"/>
             <TextBlock TextWrapping="Wrap" Text="Length Option" Margin="-75,65,0,0" Height="20" VerticalAlignment="Top"/>
             <CheckBox  Margin="6,40,0,150" Width="20"/>
             <CheckBox  Margin="-18,70,0,570"/>
@@ -121,13 +121,13 @@
 
         </StackPanel>
 
-        <Canvas Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,5,0,0" Height="0" Width="0">
+        <Canvas Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,-900,0,0" Height="0" Width="0">
             <!--<Image Source="pack://application:,,,/CRUD;component/Resources/images/NgdBeamBracketConnectGeo.png" Stretch="None" Canvas.Left="5" Canvas.Top="115" Height="310" />-->
 
             <!--<Image Width="200" Loaded="Image_Loaded"></Image>-->
-            <Image Source="D:\Ujjwal\WPF\HelloWorld\CRUD\Resources\images\NgdBeamBracketConnectGeo.png" Canvas.Left="80" Canvas.Top="120" Height="303"></Image>
-            <CheckBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="202" Canvas.Top="151"/>
-            <TextBox HorizontalAlignment="Left" Height="20" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="67" Canvas.Left="238" Canvas.Top="151" RenderTransformOrigin="0.522,1"/>
+            <Image Source="D:\Ujjwal\WPF\HelloWorld\CRUD\Resources\images\NgdBeamBracketConnectGeo.png" Canvas.Left="80" Canvas.Top="89" Height="355"></Image>
+            <CheckBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="227" Canvas.Top="128" IsChecked="True"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="67" Canvas.Left="263" Canvas.Top="128" RenderTransformOrigin="0.522,1"/>
         </Canvas>
         <Image Source="D:\Ujjwal\WPF\HelloWorld\CRUD\Resources\images\CompanyLogoFull.png" Margin="460,0,3,0" Height="27" VerticalAlignment="Top" Grid.ColumnSpan="2" ></Image>
     </Grid>
